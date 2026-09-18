@@ -1,2 +1,25 @@
-# agent
-my first project with the help with AI agent
+# 澪玖 1.2
+
+这是一个本地 AI 助手项目，按照模块化结构拆分为配置、记忆、Ollama 客户端、命令执行、TTS、STT、UI 与安装器等层次。
+
+## 运行
+
+```bash
+python main.py
+```
+
+## 结构
+
+- core/: 业务逻辑
+- memory/: 历史记录
+- tts/: 语音合成
+- stt/: 语音识别
+- ui/: 用户界面
+- installer/: 依赖安装
+- tests/: 单元测试
+
+## 说明
+
+- 所有模块使用绝对导入，以项目根目录为基准。
+- 关键全局状态已迁移到对应模块中，避免循环依赖。
+- 可通过环境变量覆盖 Ollama 和 Vosk 相关路径。
