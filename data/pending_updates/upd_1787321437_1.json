@@ -1,0 +1,14 @@
+{
+  "id": "upd_1787321437_1",
+  "type": "code_update",
+  "title": "测试更新",
+  "description": "测试描述",
+  "reason": "",
+  "status": "proposed",
+  "created_at": 1787321437.8949616,
+  "files": [],
+  "diff_stats": null,
+  "diff": null,
+  "applied_at": null,
+  "rollback_tag": null
+}

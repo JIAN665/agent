@@ -1,0 +1,24 @@
+{
+  "id": "upd_1787320668_1",
+  "type": "code_update",
+  "title": "最终验证",
+  "description": "添加验证文件",
+  "reason": "",
+  "status": "applied",
+  "created_at": 1787320668.575117,
+  "files": [
+    "self_update_verify.py"
+  ],
+  "diff_stats": {
+    "file_count": 1,
+    "files": [
+      "self_update_verify.py"
+    ],
+    "lines_added": 0,
+    "lines_removed": 0,
+    "short_summary": "改动 1 个文件，+0 / -0 行"
+  },
+  "diff": "diff --git a/self_update_verify.py b/self_update_verify.py\nnew file mode 100644\nindex 0000000..634b503\nBinary files /dev/null and b/self_update_verify.py differ\n",
+  "applied_at": 1787320708.3876371,
+  "rollback_tag": "pre-upd_1787320668_1"
+}

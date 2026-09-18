@@ -1,0 +1,14 @@
+{
+  "id": "upd_1787320196_1",
+  "type": "code_update",
+  "title": "测试自更新2",
+  "description": "添加一个测试文件",
+  "reason": "",
+  "status": "proposed",
+  "created_at": 1787320196.4534311,
+  "files": [],
+  "diff_stats": null,
+  "diff": null,
+  "applied_at": null,
+  "rollback_tag": null
+}

@@ -1,0 +1,24 @@
+{
+  "id": "upd_1787320914_1",
+  "type": "code_update",
+  "title": "新增文件行数和字符数统计工具",
+  "description": "添加一个工具来统计本地文件的行数和字符数，并在统计后告知用户。",
+  "reason": "",
+  "status": "rolled_back",
+  "created_at": 1787320914.66395,
+  "files": [
+    "core/tools/file_stats.py"
+  ],
+  "diff_stats": {
+    "file_count": 1,
+    "files": [
+      "core/tools/file_stats.py"
+    ],
+    "lines_added": 31,
+    "lines_removed": 0,
+    "short_summary": "改动 1 个文件，+31 / -0 行"
+  },
+  "diff": "--- /dev/null\n+++ b/core/tools/file_stats.py\n@@ -0,0 +1,31 @@\n+\"\"\"文件统计工具：统计文件行数和字符数。\"\"\"\n+from __future__ import annotations\n+\n+import os\n+\n+from utils.file_utils import normalize_path\n+from core.tools.base import tool\n+\n+\n+@tool(\n+    name=\"file.stats\",\n+    description=\"统计一个文本文件的行数和字符数，返回结果文本。\",\n+    params_schema={\n+        \"type\": \"object\",\n+        \"properties\": {\n+            \"path\": {\"type\": \"string\", \"description\": \"文件绝对路径\"},\n+        },\n+        \"required\": [\"path\"],\n+    },\n+    risk_level=\"low\",\n+    category=\"file\",\n+)\n+def file_stats(path: str) -> str:\n+    p = normalize_path(path)\n+    if not os.path.exists(p):\n+        return f\"文件不存在: {p}\"\n+    with open(p, \"r\", encoding=\"utf-8\", errors=\"replace\") as f:\n+        content = f.read()\n+    line_count = content.count(\"\\n\") + (0 if content.endswith(\"\\n\") else 1) if content else 0\n+    char_count = len(content)\n+    return f\"文件 {p}：{line_count} 行，{char_count} 字符\"",
+  "applied_at": 1787326623.3390644,
+  "rollback_tag": "pre-upd_1787320914_1"
+}
